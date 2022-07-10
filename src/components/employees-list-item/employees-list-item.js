@@ -11,8 +11,8 @@ class EmployeesListItem extends Component {
 
     onChangeSalary = (e) => {
         const {onChangeSalary, name} = this.props;
-        this.setState({salary: e.target.value.slice(0, -1)})
-        onChangeSalary(name, e.target.value.slice(0, -1))
+        this.setState({salary: e.target.value})
+        onChangeSalary(name, e.target.value)
     }
 
     render() {
@@ -28,9 +28,9 @@ class EmployeesListItem extends Component {
             <li className={classNames}>
                 <span className="list-group-item-label" onClick={onToggleProp} data-toggle="rise">{name}</span>
                 <input
-                    type="text"
+                    type="number"
                     className="list-group-item-input"
-                    value={this.state.salary + '$'}
+                    value={this.state.salary}
                     onChange={this.onChangeSalary} />
                 <div className="d-flex justify-content-center align-items-center">
                     <button type="button" className="btn-cookie btn-sm" onClick={onToggleProp} data-toggle="increase">
